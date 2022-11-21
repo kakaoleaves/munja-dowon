@@ -4,7 +4,7 @@ import Footer from '../component/Footer';
 import Header from './../component/Header';
 
 function Layout(){
-        const pathname = useLocation();
+        const {pathname} = useLocation();
 
         // pathname이 변경될 때마다 페이지 최상위로 이동
         useEffect(() => {
