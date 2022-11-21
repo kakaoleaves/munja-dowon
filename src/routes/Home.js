@@ -118,9 +118,9 @@ function Home(){
                     문자도원에 오신 걸 환영합니다.
                 </h3>
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                    <Link to='Entrance' style={{marginTop: 50}}>
+                    <Link to='/Entrance' style={{marginTop: 50}}>
                         <div style={{display: 'flex', flexDirection: 'column'}}>
-                            <HeaderButton text={'/Entrance'} />
+                            <HeaderButton text={'Entrance'} />
                             <div style={{marginTop: 10, textAlign: 'center'}}>바로가기</div>
                         </div>
                     </Link>
