@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import './assets/fonts/RobotoFlex.ttf';
-import './assets/fonts/Aboreto-Regular.ttf';
+import './assets/fonts/web/variable/woff2/PretendardVariable.woff2';
 import 'rc-slider/assets/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
