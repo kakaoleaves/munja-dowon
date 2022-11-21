@@ -13,7 +13,7 @@ function App() {
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
-                <Route path='/munja-dowon' element={<Layout />}>
+                <Route path={process.env.NODE_ENV === 'production' ? 'munja-dowon' : '/'} element={<Layout />}>
                     <Route path='/home' element={<Home />} />
                     <Route path='/munja' element={<Munja />} />
                     <Route path='/dowon' element={<Dowon />} />

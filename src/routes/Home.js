@@ -3,9 +3,9 @@ import styled from "styled-components"
 import LetterChanger from "../LetterChanger";
 import OverviewImg from "../assets/images/overview.png";
 import TitleVideo from "../assets/images/Title.mp4";
-import BackgroundImg1 from "../assets/images/Background-1.png";
-import BackgroundImg2 from "../assets/images/Background-2.png";
-import BackgroundImg3 from "../assets/images/Background-3.png";
+import BackgroundImg1 from "../assets/images/Background-1.mp4";
+import BackgroundImg2 from "../assets/images/Background-2.mp4";
+import BackgroundImg3 from "../assets/images/Background-3.mp4";
 import { Link } from "react-router-dom";
 import HeaderButton from "../component/HeaderButton";
 
@@ -28,7 +28,7 @@ const TextSection = styled.div`
 
 `
 
-const TitleVideoWrap = styled.video`
+const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -42,7 +42,7 @@ function Home(){
     return (
         <article>
             <div style={{marginBottom: 200}}>
-                <TitleVideoWrap src={TitleVideo} autoPlay loop />
+                <Video src={TitleVideo} autoPlay loop />
             </div>
             <section style={{marginBottom: 200}}>
                 <CenteredSection>
@@ -74,29 +74,30 @@ function Home(){
                         <div/>
                         <h3 style={{width: 625}}>BACKGROUND</h3>
                     </RowSectionSpaceBetween>
-                    <RowSectionSpaceBetween style={{marginBottom: 100}}>
-                        <RowSectionCentered style={{width: 300}}>
-                            <Image src={BackgroundImg1} />
+                    <RowSectionSpaceBetween style={{marginBottom: 80}}>
+                        <RowSectionCentered style={{width: 350}}>
+                            <Video src={BackgroundImg1} autoPlay loop />
                         </RowSectionCentered>
-                        <TextSection style={{width: 625}}>
+                        <TextSection style={{width: 625, display: 'flex', alignItems: 'center'}}>
                             <p>
                                 동양의 대표적인 예술 장르중 하나인 '산수화'는 자연물을 아름답게 묘사하는데에 집중하기 보다는, 평안한 삶에 대한 염원이나 종교적, 정치적 신념 등과 같이 자신의 이상향을 자연경관에 투영하여 내면의 메세지를 간접적으로 전달하는 일종의 언어적 표현 수단으로 작동합니다.
                             </p>
                         </TextSection>
                     </RowSectionSpaceBetween>
-                    <RowSectionSpaceBetween style={{marginBottom: 100}}>
-                    <RowSectionCentered style={{width: 300}}>
-                            <Image src={BackgroundImg2} />
+                    <RowSectionSpaceBetween style={{marginBottom: 80}}>
+                    <RowSectionCentered style={{width: 350}}>
+                            <Video src={BackgroundImg2} autoPlay loop />
                         </RowSectionCentered>
-                        <TextSection style={{width: 625}}>
+                        <TextSection style={{width: 625, display: 'flex', alignItems: 'center'}}>
                             <p>
                             반대로, 고사에 등장하는 의미있는 내용을 한자 획 속에 반영하여 구성하는, 동양의 또다른 예술 장르인 '문자도'의 경우에는메시지를 이해하기 쉽게 전달하는 것을 넘어 문자를 조형적인 차원에서 접근하게 형태 그 자체를 아름답게 표현합니다.
                             </p>
                         </TextSection>
                     </RowSectionSpaceBetween>
                     <RowSectionSpaceBetween>
-                    <RowSectionCentered style={{width: 300}}>
-                            <Image src={BackgroundImg3} />
+                    <RowSectionCentered style={{width: 325}}>
+                            <div style={{width:25}} />
+                            <Video style={{width: 300}} src={BackgroundImg3} autoPlay loop />
                         </RowSectionCentered>
                         <TextSection style={{width: 625}}>
                             <p>
