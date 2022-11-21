@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation} from 'react-router-dom';
 import Layout from './routes/Layout';
 import Home from './routes/Home';
 import Munja from './routes/Munja';
@@ -7,6 +7,9 @@ import Dowon from './routes/Dowon';
 import Entrance from './routes/Entrance';
 
 function App() {
+
+  
+
     return (
         <BrowserRouter>
             <Routes>
