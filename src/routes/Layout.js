@@ -16,11 +16,11 @@ function Layout(){
           const navigate = useNavigate();
         
           // 최초 접근 시, page 이동
-          useEffect(() => {
-            if (pathname === '/') {
-              navigate('/Home', { replace: true });
-            }
-          }, [pathname]);
+          // useEffect(() => {
+          //   if (pathname === '/') {
+          //     navigate('/Home', { replace: true });
+          //   }
+          // }, [pathname]);
       
     return (
         <Fragment>
