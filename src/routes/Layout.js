@@ -16,11 +16,15 @@ function Layout(){
           const navigate = useNavigate();
         
           // 최초 접근 시, page 이동
-          // useEffect(() => {
-          //   if (pathname === '/') {
-          //     navigate('/Home', { replace: true });
-          //   }
-          // }, [pathname]);
+          useEffect(() => {
+            if (process.env.NODE_ENV === 'development' && (pathname === '/' || pathname === '')) {
+              navigate('/Home');
+            }
+            if (process.env.NODE_ENV === 'production' && 
+                (pathname === '/munja-dowon' || pathname === '/munja-dowon/')) {
+              navigate('/munja-dowon/Home', { replace: true });
+            }
+          }, [pathname]);
       
     return (
         <Fragment>

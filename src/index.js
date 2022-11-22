@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/fonts/web/variable/woff2/PretendardVariable.woff2';
 import 'rc-slider/assets/index.css'
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <App />
