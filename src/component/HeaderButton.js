@@ -8,6 +8,10 @@ const HButton = styled.div`
     border-radius: 25px;
     padding: 10px 35px;
     box-sizing: border-box;
+    &:hover {
+        background: white;
+        color: black;
+    }
 `
 
 function HeaderButton({text}){
