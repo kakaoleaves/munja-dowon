@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import gifLetterA from './assets/images/A-compressed.mp4';
 import gifLetterB from './assets/images/B-compressed.mp4';
 import gifLetterC from './assets/images/C.mp4';
@@ -28,7 +28,7 @@ import gifLetterZ from './assets/images/Z.mp4';
 
 
 function LetterChanger(props) {
-    const {voca, width, height, size} = props || {};
+    const {voca, vocas, index, width, height, size} = props || {};
 
     const srcImg = (voca) => {
         switch (voca) {
@@ -110,18 +110,58 @@ function LetterChanger(props) {
             case 'z':
             case 'Z':
                 return gifLetterZ;
+            case '\n':
+                return '\n';
             default:
                 return '';
         }
     }
 
+    const changed = useMemo(() => srcImg(voca), [voca]);
+    const smallSize = useMemo(()=> voca === 'l' || voca === 'L' || voca === 'I' || voca === 'i' || voca === 'T' || voca === 't', [voca]);
+
+    const getSize = useMemo(()=> {
+        var sum = 0;
+        const tmp = vocas.slice(0, index).split('');
+        tmp.forEach(element => {
+            if ((element >= 'a' && element <= 'z') || (element >= 'A' && element <= 'Z')) {
+                if (element === 'l' || element === 'L' || element === 'I' || element === 'i' || element === 'T' || element === 't') {
+                    if (sum + size + width - 20 > 1018){
+                        sum = (size + width - 20);
+                    } else {
+                        sum += (size + width - 20);
+                    }
+                } else {
+                    if (sum + (size + width) > 1018){
+                        sum = (size + width);
+                    } else {
+                        sum += (size + width);
+                    }
+                }
+            } else if (element === ' '){
+                if (sum + (size/2 + width) > 1018) {
+                    sum = (size/2 + width);
+                } else {
+                    sum += (size/2 + width);
+                }
+            } else if (element === '\n') {
+                sum = 0;
+            }
+        })
+        const lineLength = sum % 1018;
+        return 1000 - lineLength - width;
+    },[voca, vocas, size, width, index]);
+
     return (
         <div style={{marginRight: width, marginBottom: height}}>
             {
-                srcImg(voca) === '' ? 
+                changed === '' ?
                 <div style={{width: size/2, height: size}} />
                 :
-                <video style={{width: size, height: size}} autoPlay="autoplay" loop>
+                changed === '\n' ?
+                <div style={{width: getSize, height: size}} />
+                :
+                <video className='video' style={{width: smallSize? (size - 20) : size, height: size}} autoPlay loop>
                     <source src={srcImg(voca)} type="video/mp4"/>
                 </video>
             }

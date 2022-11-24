@@ -10,6 +10,16 @@ body {
   background-color: black;
 }
 
+textarea {
+  font-family: 'Pretendard';
+}
+
+button {
+  font-family: 'Pretendard';
+  font-size: inherit;
+  padding: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

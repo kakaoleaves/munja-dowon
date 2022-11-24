@@ -44,7 +44,8 @@ header a:last-child {
 }
 
 article {
-  margin: 0 164px;
+  width: 1592px;
+  margin: auto;
 }
 
 h3 {
