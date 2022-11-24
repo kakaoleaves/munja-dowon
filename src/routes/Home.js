@@ -122,7 +122,7 @@ function Home(){
                     <Link to={process.env.NODE_ENV === 'production' ? '/munja-dowon/Entrance' : '/Entrance'} style={{marginTop: 50}}>
                         <div style={{display: 'flex', flexDirection: 'column'}}>
                             <HeaderButton text={'Entrance'} />
-                            <div style={{marginTop: 10, textAlign: 'center'}}>바로가기</div>
+                            <div style={{marginTop: 20, textAlign: 'center'}}>바로가기</div>
                         </div>
                     </Link>
                 </div>
