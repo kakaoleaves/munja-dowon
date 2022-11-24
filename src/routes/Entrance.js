@@ -3,6 +3,11 @@ import Slider from 'rc-slider';
 import styled from 'styled-components';
 import LetterChanger from './../LetterChanger';
 
+const Section = styled.section`
+    margin-bottom: 500px;
+    display: flex;
+`
+
 const DisplayWrap = styled.div`
     overflow: scroll;
     display: flex;
@@ -14,7 +19,7 @@ const DisplayWrap = styled.div`
     padding: 20px;
 `
 
-const TextInputWrap = styled.input`
+const TextArea = styled.textarea`
     width: 770px;
     background-color: white;
     border-radius: 13px;
@@ -38,7 +43,7 @@ function Entrance(){
 
     return (
         <article>
-            <section style={{marginBottom: 500}}>
+            <Section>
                 <DisplayWrap>
                     {
                         voca.split('').map((el,index) =>
@@ -47,12 +52,12 @@ function Entrance(){
                     }
                 </DisplayWrap>
                 <div style={{marginTop: 38, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <TextInputWrap maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
+                    <TextArea maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
                     <Slider style={{width: 150}} value={width} max={20} step={1} onChange={value => setWidth(value)} />
                     <Slider style={{width: 150}} value={height} max={50} step={5} onChange={value => setHeight(value)} />
                     <Slider style={{width: 150}} value={size} min={100} max={500} step={10} onChange={value => setSize(value)}/>
                 </div>
-            </section>
+            </Section>
         </article>
     )
 }
