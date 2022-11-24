@@ -9,7 +9,8 @@ const HeaderStyle = styled.div`
     align-items: center;
     justify-content: center;
 `
-const HeaderLogo = styled.img`
+
+    const HeaderLogo = styled.img`
     position: absolute;
     z-index: 100;
     top: 60px;
