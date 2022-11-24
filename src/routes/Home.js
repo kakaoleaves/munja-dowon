@@ -111,7 +111,7 @@ function Home(){
                     </RowSectionSpaceBetween>
                 </CenteredSection>
             </section>
-            <section>
+            <section style={{marginBottom: 500}}>
                 <h3 style={{textAlign: 'center'}}>    
                     표현의 경계가 없는 나만의 이상향
                 </h3>

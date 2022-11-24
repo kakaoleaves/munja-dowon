@@ -38,19 +38,21 @@ function Entrance(){
 
     return (
         <article>
-            <DisplayWrap>
-                {
-                    voca.split('').map((el,index) =>
-                        <LetterChanger key={index} voca={el} width={width} height={height} size={size} />
-                    )
-                }
-            </DisplayWrap>
-            <div style={{marginTop: 38, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                <TextInputWrap maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
-                <Slider style={{width: 150}} value={width} max={20} step={1} onChange={value => setWidth(value)} />
-                <Slider style={{width: 150}} value={height} max={50} step={5} onChange={value => setHeight(value)} />
-                <Slider style={{width: 150}} value={size} min={100} max={500} step={10} onChange={value => setSize(value)}/>
-            </div>
+            <section style={{marginBottom: 500}}>
+                <DisplayWrap>
+                    {
+                        voca.split('').map((el,index) =>
+                            <LetterChanger key={index} voca={el} width={width} height={height} size={size} />
+                        )
+                    }
+                </DisplayWrap>
+                <div style={{marginTop: 38, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <TextInputWrap maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
+                    <Slider style={{width: 150}} value={width} max={20} step={1} onChange={value => setWidth(value)} />
+                    <Slider style={{width: 150}} value={height} max={50} step={5} onChange={value => setHeight(value)} />
+                    <Slider style={{width: 150}} value={size} min={100} max={500} step={10} onChange={value => setSize(value)}/>
+                </div>
+            </section>
         </article>
     )
 }

@@ -63,7 +63,7 @@ function Munja(){
                     </TextSection>
                 </CenteredSection>
             </section>
-            <section>
+            <section style={{marginBottom: 500}}>
                 <CenteredSection>
                     <Video style={{width: 1440, marginLeft: -240, marginBottom: 100}} src={size} autoPlay loop />
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
