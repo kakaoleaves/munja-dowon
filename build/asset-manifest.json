@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/munja-dowon/static/css/main.3387d28a.css",
-    "main.js": "/munja-dowon/static/js/main.4249ee16.js",
+    "main.js": "/munja-dowon/static/js/main.d2b8375f.js",
     "static/js/787.6f69735f.chunk.js": "/munja-dowon/static/js/787.6f69735f.chunk.js",
     "static/media/Title.mp4": "/munja-dowon/static/media/Title.1ec781d40af25b2c2535.mp4",
     "static/media/Alphabet-Size.mp4": "/munja-dowon/static/media/Alphabet-Size.7adabdec85cc2d95eb24.mp4",
@@ -45,11 +45,11 @@
     "static/media/Dowon-process.png": "/munja-dowon/static/media/Dowon-process.5c2aa1f3e071c8c5abc2.png",
     "index.html": "/munja-dowon/index.html",
     "main.3387d28a.css.map": "/munja-dowon/static/css/main.3387d28a.css.map",
-    "main.4249ee16.js.map": "/munja-dowon/static/js/main.4249ee16.js.map",
+    "main.d2b8375f.js.map": "/munja-dowon/static/js/main.d2b8375f.js.map",
     "787.6f69735f.chunk.js.map": "/munja-dowon/static/js/787.6f69735f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3387d28a.css",
-    "static/js/main.4249ee16.js"
+    "static/js/main.d2b8375f.js"
   ]
 }
