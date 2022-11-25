@@ -109,7 +109,7 @@ function Entrance(){
 
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    const [size, setSize] = useState(200);
+    const [size, setSize] = useState(100);
 
     const [voca, setVoca] = useState('');
 
@@ -123,7 +123,7 @@ function Entrance(){
     const onClickReset = () => {
         setWidth(0);
         setHeight(0);
-        setSize(200);
+        setSize(100);
     }
 
     const onClickViewMyDowon = () => {
