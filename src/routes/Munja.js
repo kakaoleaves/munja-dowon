@@ -5,6 +5,8 @@ import angle from '../assets/images/Angle.png';
 import size from '../assets/images/Alphabet-Size.mp4';
 import dot from '../assets/images/Dot.png';
 
+const anime = require('animejs');
+
 const RowSectionSpaceBetween = styled.div`
 display: flex;
 justify-content: space-between;
@@ -33,7 +35,11 @@ const Video = styled.video`
 const Image = styled.img`
 object-fit: contain;
 `
+
 function Munja(){
+
+
+
     return (
         <article>
             <section style={{marginBottom: 250}}>
@@ -54,7 +60,7 @@ function Munja(){
                     <Image style={{width: '100%', marginBottom: 100}} src={angle} />
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
-                            <Image src={dot} />
+                            <Image id='angle-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>ANGLE</h3>
                         </div>
                         <div style={{width: '60%'}}>
@@ -68,7 +74,7 @@ function Munja(){
                     <Video style={{width: 1440, marginLeft: -240, marginBottom: 100}} src={size} autoPlay loop />
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
-                            <Image src={dot} />
+                            <Image id='size-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>SIZE</h3>
                         </div>
                         <div style={{width: '60%'}}>

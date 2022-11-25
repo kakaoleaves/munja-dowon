@@ -8,7 +8,7 @@ import Entrance from './routes/Entrance';
 
 
 const router = createBrowserRouter([{
-    basename: process.env.PUBLIC_URL,
+    basename: process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '',
     path: process.env.NODE_ENV === 'production' ? 'munja-dowon' : '',
     element: <Layout />,
     children: [{

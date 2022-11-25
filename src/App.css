@@ -59,3 +59,19 @@ p {
   margin: 0;
   line-height: 1.5;
 }
+
+#angle-img {
+  transition: all 0.3s ease-in-out 0s;
+}
+#angle-img:hover {
+  transition: all 0.3s ease-in-out 0s;
+  transform: rotate(360deg);
+}
+
+#size-img {
+  transition: all 0.3s;
+}
+
+#size-img:hover {
+  transform: scale(1.4);
+}

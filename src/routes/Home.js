@@ -8,6 +8,7 @@ import BackgroundImg2 from "../assets/images/Background-2.mp4";
 import BackgroundImg3 from "../assets/images/Background-3.mp4";
 import { Link } from "react-router-dom";
 import HeaderButton from "../component/HeaderButton";
+import useScrollFadeIn from "../hooks/useScrollFadeIn";
 
 const RowSectionSpaceBetween = styled.div`
     display: flex;
@@ -39,6 +40,11 @@ const Image = styled.img`
 `
 
 function Home(){
+    const animatedItem = useScrollFadeIn({
+        defaultStyle: {marginBottom: 500},
+    });
+
+
     return (
         <article>
             <div style={{marginBottom: 200}}>
@@ -75,8 +81,8 @@ function Home(){
                         <h3 style={{width: 625}}>BACKGROUND</h3>
                     </RowSectionSpaceBetween>
                     <RowSectionSpaceBetween style={{marginBottom: 80}}>
-                        <RowSectionCentered style={{width: 350}}>
-                            <Video src={BackgroundImg1} autoPlay loop />
+                        <RowSectionCentered style={{width: 350, height: 180}}>
+                            <Video style={{objectFit: 'cover'}} src={BackgroundImg1} autoPlay loop />
                         </RowSectionCentered>
                         <TextSection style={{width: 625, display: 'flex', alignItems: 'center'}}>
                             <p>
@@ -111,7 +117,7 @@ function Home(){
                     </RowSectionSpaceBetween>
                 </CenteredSection>
             </section>
-            <section style={{marginBottom: 500}}>
+            <section {...animatedItem}>
                 <h3 style={{textAlign: 'center'}}>    
                     표현의 경계가 없는 나만의 이상향
                 </h3>
