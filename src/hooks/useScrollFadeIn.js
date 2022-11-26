@@ -24,7 +24,7 @@ const useScrollFadeIn = ({defaultStyle}) => {
         const { current } = dom;
       
         if (current) {
-            observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
+            observer = new IntersectionObserver(handleScroll, { threshold: 0.5 });
             observer.observe(current);
             return () => observer && observer.disconnect();
         };

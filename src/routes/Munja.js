@@ -37,9 +37,6 @@ object-fit: contain;
 `
 
 function Munja(){
-
-
-
     return (
         <article>
             <section style={{marginBottom: 250}}>

@@ -33,6 +33,7 @@ const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    z-index: -1;
 `
 
 const Image = styled.img`
@@ -41,9 +42,24 @@ const Image = styled.img`
 
 function Home(){
     const animatedItem = useScrollFadeIn({
-        defaultStyle: {marginBottom: 500},
+        defaultStyle: {marginBottom: 300},
     });
 
+    const animatedItem1 = useScrollFadeIn({
+        defaultStyle: {}
+    });
+
+    const animatedItem2 = useScrollFadeIn({
+        defaultStyle: {objectFit: 'cover'}
+    });
+
+    const animatedItem3 = useScrollFadeIn({
+        defaultStyle: {}
+    });
+
+    const animatedItem4 = useScrollFadeIn({
+        defaultStyle: {width: 300}
+    });
 
     return (
         <article>
@@ -69,7 +85,7 @@ function Home(){
                         </TextSection>
                         <div>
                             <div style={{height: 36}} />
-                            <img width={280} src={OverviewImg} />
+                            <img {...animatedItem1} width={280} src={OverviewImg} />
                         </div>
                     </RowSectionSpaceBetween>
                 </CenteredSection>
@@ -82,7 +98,7 @@ function Home(){
                     </RowSectionSpaceBetween>
                     <RowSectionSpaceBetween style={{marginBottom: 80}}>
                         <RowSectionCentered style={{width: 350, height: 180}}>
-                            <Video style={{objectFit: 'cover'}} src={BackgroundImg1} autoPlay loop />
+                            <Video {...animatedItem2} src={BackgroundImg1} autoPlay loop />
                         </RowSectionCentered>
                         <TextSection style={{width: 625, display: 'flex', alignItems: 'center'}}>
                             <p>
@@ -92,7 +108,7 @@ function Home(){
                     </RowSectionSpaceBetween>
                     <RowSectionSpaceBetween style={{marginBottom: 80}}>
                     <RowSectionCentered style={{width: 350}}>
-                            <Video src={BackgroundImg2} autoPlay loop />
+                            <Video {...animatedItem3} src={BackgroundImg2} autoPlay loop />
                         </RowSectionCentered>
                         <TextSection style={{width: 625, display: 'flex', alignItems: 'center'}}>
                             <p>
@@ -103,7 +119,7 @@ function Home(){
                     <RowSectionSpaceBetween>
                     <RowSectionCentered style={{width: 325}}>
                             <div style={{width:25}} />
-                            <Video style={{width: 300}} src={BackgroundImg3} autoPlay loop />
+                            <Video {...animatedItem4} src={BackgroundImg3} autoPlay loop />
                         </RowSectionCentered>
                         <TextSection style={{width: 625}}>
                             <p>
