@@ -32,10 +32,10 @@ import sizeY from '../assets/images/size/Y.mp4';
 import sizeZ from '../assets/images/size/Z.mp4';
 import angleA from '../assets/images/angle/A.mp4';
 import angleB from '../assets/images/angle/B.mp4';
-// import angleC from '../assets/images/angle/C.mp4';
+import angleC from '../assets/images/angle/C.mp4';
 import angleD from '../assets/images/angle/D.mp4';
 import angleE from '../assets/images/angle/E.mp4';
-// import angleF from '../assets/images/angle/F.mp4';
+import angleF from '../assets/images/angle/F.mp4';
 import angleG from '../assets/images/angle/G.mp4';
 import angleH from '../assets/images/angle/H.mp4';
 import angleI from '../assets/images/angle/I.mp4';
@@ -44,25 +44,24 @@ import angleK from '../assets/images/angle/K.mp4';
 import angleL from '../assets/images/angle/L.mp4';
 import angleM from '../assets/images/angle/M.mp4';
 import angleN from '../assets/images/angle/N.mp4';
-// import angleO from '../assets/images/angle/O.mp4';
-// import angleP from '../assets/images/angle/P.mp4';
+import angleO from '../assets/images/angle/O.mp4';
+import angleP from '../assets/images/angle/P.mp4';
 import angleQ from '../assets/images/angle/Q.mp4';
 import angleR from '../assets/images/angle/R.mp4';
 import angleS from '../assets/images/angle/S.mp4';
 import angleT from '../assets/images/angle/T.mp4';
-// import angleU from '../assets/images/angle/U.mp4';
-// import angleV from '../assets/images/angle/V.mp4';
-// import angleW from '../assets/images/angle/W.mp4';
-// import angleX from '../assets/images/angle/X.mp4';
-// import angleY from '../assets/images/angle/Y.mp4';
-// import angleZ from '../assets/images/angle/Z.mp4';
+import angleU from '../assets/images/angle/U.mp4';
+import angleV from '../assets/images/angle/V.mp4';
+import angleW from '../assets/images/angle/W.mp4';
+import angleX from '../assets/images/angle/X.mp4';
+import angleY from '../assets/images/angle/Y.mp4';
+import angleZ from '../assets/images/angle/Z.mp4';
 import HoverVideoPlayer from 'react-hover-video-player';
 
 const anime = require('animejs');
 
 const RowSectionSpaceBetween = styled.div`
 display: flex;
-justify-content: space-between;
 `
 const RowSectionCentered = styled.div`
 display: flex;
@@ -71,7 +70,7 @@ justify-content: center;
 
 const CenteredSection = styled.div`
 margin: auto;
-max-width: 1024px;
+max-width: 1222.5px;
 `
 
 const TextSection = styled.div`
@@ -84,10 +83,11 @@ object-fit: contain;
 `
 
 const View = styled.div`
-    // transition: all 0.3s;
-    // &:hover {
-    //     transform: scale(1.4);
-    // }  
+    transition: all 0.3s;
+    &:hover {
+        z-index: 50;
+        transform: scale(1.4);
+    }  
 `
 
 const Video = (props) => {
@@ -103,7 +103,7 @@ function Munja(){
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween style={{alignItems: 'flex-end'}}>
-                        <Image style={{width: 385}} src={processMain} />
+                        <Image style={{width: 385, marginRight: 173}} src={processMain} />
                         <TextSection style={{width: 613}}>
                             <h3>PROCESS</h3>
                             <p>
@@ -116,16 +116,19 @@ function Munja(){
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
                 <div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={angleA} />
                             <Video src={angleB} />
-                            <Video src={sizeC} />
+                            <Video src={angleC} />
                             <Video src={angleD} />
                             <Video src={angleE} />
-                            <Video src={sizeF} />
+                            <Video src={angleF} />
                             <Video src={angleG} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={angleH} />
                             <Video src={angleI} />
                             <Video src={angleJ} />
@@ -133,22 +136,27 @@ function Munja(){
                             <Video src={angleL} />
                             <Video src={angleM} />
                             <Video src={angleN} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
-                            <Video src={sizeO} />
-                            <Video src={sizeP} />
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
+                            <Video src={angleO} />
+                            <Video src={angleP} />
                             <Video src={angleQ} />
                             <Video src={angleR} />
                             <Video src={angleS} />
                             <Video src={angleT} />
-                            <Video src={sizeU} />
+                            <Video src={angleU} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
-                            <Video src={sizeV} />
-                            <Video src={sizeW} />
-                            <Video src={sizeX} />
-                            <Video src={sizeY} />
-                            <Video src={sizeZ} />
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
+                            <Video src={angleV} />
+                            <Video src={angleW} />
+                            <Video src={angleX} />
+                            <Video src={angleY} />
+                            <Video src={angleZ} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
                     </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
@@ -165,7 +173,8 @@ function Munja(){
             <section style={{marginBottom: 300}}>
                 <CenteredSection>
                     <div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={sizeA} />
                             <Video src={sizeB} />
                             <Video src={sizeC} />
@@ -173,8 +182,10 @@ function Munja(){
                             <Video src={sizeE} />
                             <Video src={sizeF} />
                             <Video src={sizeG} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={sizeH} />
                             <Video src={sizeI} />
                             <Video src={sizeJ} />
@@ -182,8 +193,10 @@ function Munja(){
                             <Video src={sizeL} />
                             <Video src={sizeM} />
                             <Video src={sizeN} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={sizeO} />
                             <Video src={sizeP} />
                             <Video src={sizeQ} />
@@ -191,13 +204,16 @@ function Munja(){
                             <Video src={sizeS} />
                             <Video src={sizeT} />
                             <Video src={sizeU} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
-                        <div className='arrow'>
+                        <div className='dot-animated-container'>
+                            <div className='animated-dot'/>
                             <Video src={sizeV} />
                             <Video src={sizeW} />
                             <Video src={sizeX} />
                             <Video src={sizeY} />
                             <Video src={sizeZ} />
+                            <div className='animated-dot-bottom'/>                            
                         </div>
                     </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>

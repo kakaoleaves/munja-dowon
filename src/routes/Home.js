@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import LetterChanger from "../LetterChanger";
-import OverviewImg from "../assets/images/overview.png";
+import OverviewVideo from "../assets/images/overview.mp4";
 import TitleVideo from "../assets/images/Title.mp4";
 import BackgroundImg1 from "../assets/images/Background-1.mp4";
 import BackgroundImg2 from "../assets/images/Background-2.mp4";
@@ -33,7 +32,6 @@ const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    z-index: -1;
 `
 
 const Image = styled.img`
@@ -46,7 +44,7 @@ function Home(){
     });
 
     const animatedItem1 = useScrollFadeIn({
-        defaultStyle: {}
+        defaultStyle: {height: 300, objectFit: 'contain'}
     });
 
     const animatedItem2 = useScrollFadeIn({
@@ -64,9 +62,9 @@ function Home(){
     return (
         <article>
             <div style={{marginBottom: 200}}>
-                <Video src={TitleVideo} autoPlay loop />
+                <Video style={{marginTop: -100}} src={TitleVideo} autoPlay loop />
             </div>
-            <section style={{marginBottom: 200}}>
+            <section style={{marginBottom: 250}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween style={{width: '100%'}}>
                         <TextSection style={{width: 625}}>
@@ -85,12 +83,12 @@ function Home(){
                         </TextSection>
                         <div>
                             <div style={{height: 36}} />
-                            <img {...animatedItem1} width={280} src={OverviewImg} />
+                            <Video {...animatedItem1} src={OverviewVideo} autoPlay loop />
                         </div>
                     </RowSectionSpaceBetween>
                 </CenteredSection>
             </section>
-            <section style={{marginBottom: 200}}>
+            <section style={{marginBottom: 232.5}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween>
                         <div/>
@@ -141,7 +139,7 @@ function Home(){
                     문자도원에 오신 걸 환영합니다.
                 </h3>
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                    <Link to={process.env.NODE_ENV === 'production' ? '/munja-dowon/Entrance' : '/Entrance'} style={{marginTop: 50}}>
+                    <Link to={process.env.NODE_ENV === 'production' ? '/munja-dowon/Entrance' : '/Entrance'} style={{marginTop: 80}}>
                         <div style={{display: 'flex', flexDirection: 'column'}}>
                             <HeaderButton text={'Entrance'} />
                             <div style={{marginTop: 20, textAlign: 'center'}}>바로가기</div>

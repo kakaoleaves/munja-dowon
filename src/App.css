@@ -1,9 +1,16 @@
+html {
+  min-width: 1920px;
+}
+
 body {
   min-width: 1920px;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
   user-select:none;
+}
+
+footer {
   overflow-x: hidden;
 }
 
@@ -80,34 +87,60 @@ p {
 
 @keyframes rightToLeft {
   from   { transform: translateX(0%); }
-  to     { transform: translateX(-320%); }
+  to     { transform: translateX(-100%); }
 }
 
 .size-video {
-  width: 140px !important;
-  height: 150px;
+  width: 168px !important;
+  height: 180px;
   object-fit: contain !important;
 }
 
-.arrow {
+.animated-dot {
+  position: absolute;
+  z-index: 1;
+  width: 1222.5px;
+  height: 1px;
+  background: linear-gradient(90deg, #767676 50%, transparent 50%);
+  background-repeat: repeat-x;
+  background-size: 6px 2px;
+  background-position: 0px 0px;
+  animation: border-dance 100s infinite linear;
+}
+
+.animated-dot-bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 1222.5px;
+  height: 1px;
+  background: linear-gradient(90deg, #767676 50%, transparent 50%);
+  background-repeat: repeat-x;
+  background-size: 6px 2px;
+  background-position: 0px 0px;
+  animation: border-dance 100s infinite linear;
+}
+
+.dot-animated-container {
+  position: relative;
   display: flex;
-  height: 158px;
-  width: 1000px;
+  height: 180px;
+  width: 1222.5px;
   box-sizing: border-box;
-  padding: 2px 10px;
-  background: linear-gradient(90deg, #767676 50%, transparent 50%), linear-gradient(90deg,#767676 50%, transparent 50%);
+  padding: 0 22px;
+  /* background: linear-gradient(90deg, #767676 50%, transparent 50%), linear-gradient(90deg,#767676 50%, transparent 50%);
   background-repeat: repeat-x, repeat-x;
   background-size: 6px 2px, 6px 2px;
-  background-position: 0px 0px, 1100px 150px;
-  animation: border-dance 100s infinite linear;
+  background-position: 0px 0px, 1222.5px 180px;
+  animation: border-dance 100s infinite linear; */
   margin-bottom: 40px;
 }
 
 @keyframes border-dance {
   0% {
-    background-position: 0px 0px, 1100px 154px;
+    background-position: 0px 0px, 1222.5px 184px;
   }
   100% {
-    background-position: 1100px 0px, 0px 154px;
+    background-position: 1222.5px 0px, 0px 184px;
   }
 }

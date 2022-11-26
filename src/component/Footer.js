@@ -5,25 +5,18 @@ import footerVideo from "../assets/images/footer.mp4"
 
 const FooterStyle = styled.div`
     display: flex;
-    padding: 4.1vw 0;
+    padding-top: 50px;
     align-items: center;
     justify-content: space-between;
     max-width: 1024px;
     margin: auto;
 `
 
-const FooterVideoFirst = styled.video`
+const FooterVideo = styled.video`
     object-fit: contain;
-    margin-right: 1320px;
-    width: 600px;
-    animation: rightToLeft 30s linear infinite;
+    width: 480px;
+    animation: rightToLeft 10s linear infinite;
 `
-const FooterVideoSecond = styled.video`
-    width: 600px;
-    object-fit: contain;
-    animation: rightToLeft 30s linear infinite;
-`
-
 
 function Footer(){
     return (
@@ -42,9 +35,12 @@ function Footer(){
                 <div>kakaoleaves@naver.com</div>
             </div>
             </FooterStyle>
-            <div style={{display: 'flex'}}>
-                <FooterVideoFirst src={footerVideo} autoPlay loop />
-                <FooterVideoSecond src={footerVideo} autoPlay loop />
+            <div style={{display: 'flex', overflowX: 'hidden'}}>
+                <FooterVideo src={footerVideo} autoPlay loop />
+                <FooterVideo src={footerVideo} autoPlay loop />
+                <FooterVideo src={footerVideo} autoPlay loop />
+                <FooterVideo src={footerVideo} autoPlay loop />
+                <FooterVideo src={footerVideo} autoPlay loop />
             </div>
         </footer>
     )

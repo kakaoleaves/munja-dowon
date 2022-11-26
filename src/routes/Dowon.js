@@ -9,8 +9,8 @@ import dot from '../assets/images/Dot.png';
 
 const RowSectionSpaceBetween = styled.div`
 display: flex;
-justify-content: space-between;
 `
+
 const RowSectionCentered = styled.div`
 display: flex;
 justify-content: center;
@@ -18,7 +18,7 @@ justify-content: center;
 
 const CenteredSection = styled.div`
 margin: auto;
-max-width: 1024px;
+max-width: 1222.5px;
 `
 
 const TextSection = styled.div`
@@ -36,7 +36,7 @@ function Dowon(){
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween style={{alignItems: 'flex-end'}}>
-                        <Image style={{width: 385}} src={dowonProcess} />
+                        <Image style={{width: 385, marginRight: 173}} src={dowonProcess} />
                         <TextSection style={{width: 613}}>
                             <h3>PROCESS</h3>
                             <p>
