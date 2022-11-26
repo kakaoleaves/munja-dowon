@@ -1,9 +1,62 @@
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import styled from 'styled-components';
 import processMain from '../assets/images/Process-main.png';
 import angle from '../assets/images/Angle.png';
 import size from '../assets/images/Alphabet-Size.mp4';
 import dot from '../assets/images/Dot.png';
+import sizeA from '../assets/images/size/A.mp4';
+import sizeB from '../assets/images/size/B.mp4';
+import sizeC from '../assets/images/size/C.mp4';
+import sizeD from '../assets/images/size/D.mp4';
+import sizeE from '../assets/images/size/E.mp4';
+import sizeF from '../assets/images/size/F.mp4';
+import sizeG from '../assets/images/size/G.mp4';
+import sizeH from '../assets/images/size/H.mp4';
+import sizeI from '../assets/images/size/I.mp4';
+import sizeJ from '../assets/images/size/J.mp4';
+import sizeK from '../assets/images/size/K.mp4';
+import sizeL from '../assets/images/size/L.mp4';
+import sizeM from '../assets/images/size/M.mp4';
+import sizeN from '../assets/images/size/N.mp4';
+import sizeO from '../assets/images/size/O.mp4';
+import sizeP from '../assets/images/size/P.mp4';
+import sizeQ from '../assets/images/size/Q.mp4';
+import sizeR from '../assets/images/size/R.mp4';
+import sizeS from '../assets/images/size/S.mp4';
+import sizeT from '../assets/images/size/T.mp4';
+import sizeU from '../assets/images/size/U.mp4';
+import sizeV from '../assets/images/size/V.mp4';
+import sizeW from '../assets/images/size/W.mp4';
+import sizeX from '../assets/images/size/X.mp4';
+import sizeY from '../assets/images/size/Y.mp4';
+import sizeZ from '../assets/images/size/Z.mp4';
+import angleA from '../assets/images/angle/A.mp4';
+import angleB from '../assets/images/angle/B.mp4';
+// import angleC from '../assets/images/angle/C.mp4';
+import angleD from '../assets/images/angle/D.mp4';
+import angleE from '../assets/images/angle/E.mp4';
+// import angleF from '../assets/images/angle/F.mp4';
+import angleG from '../assets/images/angle/G.mp4';
+import angleH from '../assets/images/angle/H.mp4';
+import angleI from '../assets/images/angle/I.mp4';
+import angleJ from '../assets/images/angle/J.mp4';
+import angleK from '../assets/images/angle/K.mp4';
+import angleL from '../assets/images/angle/L.mp4';
+import angleM from '../assets/images/angle/M.mp4';
+import angleN from '../assets/images/angle/N.mp4';
+// import angleO from '../assets/images/angle/O.mp4';
+// import angleP from '../assets/images/angle/P.mp4';
+import angleQ from '../assets/images/angle/Q.mp4';
+import angleR from '../assets/images/angle/R.mp4';
+import angleS from '../assets/images/angle/S.mp4';
+import angleT from '../assets/images/angle/T.mp4';
+// import angleU from '../assets/images/angle/U.mp4';
+// import angleV from '../assets/images/angle/V.mp4';
+// import angleW from '../assets/images/angle/W.mp4';
+// import angleX from '../assets/images/angle/X.mp4';
+// import angleY from '../assets/images/angle/Y.mp4';
+// import angleZ from '../assets/images/angle/Z.mp4';
+import HoverVideoPlayer from 'react-hover-video-player';
 
 const anime = require('animejs');
 
@@ -26,17 +79,25 @@ word-break: keep-all;
 font-size: 20px;
 `
 
-const Video = styled.video`
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-`
-
 const Image = styled.img`
 object-fit: contain;
 `
 
+const View = styled.div`
+    // transition: all 0.3s;
+    // &:hover {
+    //     transform: scale(1.4);
+    // }  
+`
+
+const Video = (props) => {
+    return <View>
+        <HoverVideoPlayer videoClassName="size-video" videoSrc={props?.src} restartOnPaused loop />
+    </View>
+}
+
 function Munja(){
+
     return (
         <article>
             <section style={{marginBottom: 250}}>
@@ -54,7 +115,42 @@ function Munja(){
             </section>
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
-                    <Image style={{width: '100%', marginBottom: 100}} src={angle} />
+                <div>
+                        <div className='arrow'>
+                            <Video src={angleA} />
+                            <Video src={angleB} />
+                            <Video src={sizeC} />
+                            <Video src={angleD} />
+                            <Video src={angleE} />
+                            <Video src={sizeF} />
+                            <Video src={angleG} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={angleH} />
+                            <Video src={angleI} />
+                            <Video src={angleJ} />
+                            <Video src={angleK} />
+                            <Video src={angleL} />
+                            <Video src={angleM} />
+                            <Video src={angleN} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={sizeO} />
+                            <Video src={sizeP} />
+                            <Video src={angleQ} />
+                            <Video src={angleR} />
+                            <Video src={angleS} />
+                            <Video src={angleT} />
+                            <Video src={sizeU} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={sizeV} />
+                            <Video src={sizeW} />
+                            <Video src={sizeX} />
+                            <Video src={sizeY} />
+                            <Video src={sizeZ} />
+                        </div>
+                    </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image id='angle-img' src={dot} />
@@ -66,9 +162,44 @@ function Munja(){
                     </TextSection>
                 </CenteredSection>
             </section>
-            <section style={{marginBottom: 500}}>
+            <section style={{marginBottom: 300}}>
                 <CenteredSection>
-                    <Video style={{width: 1440, marginLeft: -240, marginBottom: 100}} src={size} autoPlay loop />
+                    <div>
+                        <div className='arrow'>
+                            <Video src={sizeA} />
+                            <Video src={sizeB} />
+                            <Video src={sizeC} />
+                            <Video src={sizeD} />
+                            <Video src={sizeE} />
+                            <Video src={sizeF} />
+                            <Video src={sizeG} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={sizeH} />
+                            <Video src={sizeI} />
+                            <Video src={sizeJ} />
+                            <Video src={sizeK} />
+                            <Video src={sizeL} />
+                            <Video src={sizeM} />
+                            <Video src={sizeN} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={sizeO} />
+                            <Video src={sizeP} />
+                            <Video src={sizeQ} />
+                            <Video src={sizeR} />
+                            <Video src={sizeS} />
+                            <Video src={sizeT} />
+                            <Video src={sizeU} />
+                        </div>
+                        <div className='arrow'>
+                            <Video src={sizeV} />
+                            <Video src={sizeW} />
+                            <Video src={sizeX} />
+                            <Video src={sizeY} />
+                            <Video src={sizeZ} />
+                        </div>
+                    </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image id='size-img' src={dot} />

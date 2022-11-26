@@ -60,7 +60,7 @@ function Dowon(){
                     </TextSection>
                 </CenteredSection>
             </section>
-            <section style={{marginBottom: 500}}>
+            <section style={{marginBottom: 300}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween>
                         <div style={{width: 70}}>

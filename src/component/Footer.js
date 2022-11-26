@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import footerImg from "../assets/images/Footer.png";
+import footerVideo from "../assets/images/footer.mp4"
 
 const FooterStyle = styled.div`
     display: flex;
@@ -9,6 +10,18 @@ const FooterStyle = styled.div`
     justify-content: space-between;
     max-width: 1024px;
     margin: auto;
+`
+
+const FooterVideoFirst = styled.video`
+    object-fit: contain;
+    margin-right: 1320px;
+    width: 600px;
+    animation: rightToLeft 30s linear infinite;
+`
+const FooterVideoSecond = styled.video`
+    width: 600px;
+    object-fit: contain;
+    animation: rightToLeft 30s linear infinite;
 `
 
 
@@ -29,6 +42,10 @@ function Footer(){
                 <div>kakaoleaves@naver.com</div>
             </div>
             </FooterStyle>
+            <div style={{display: 'flex'}}>
+                <FooterVideoFirst src={footerVideo} autoPlay loop />
+                <FooterVideoSecond src={footerVideo} autoPlay loop />
+            </div>
         </footer>
     )
 }
