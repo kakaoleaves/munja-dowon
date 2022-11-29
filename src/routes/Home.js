@@ -59,6 +59,7 @@ function Home(){
         defaultStyle: {width: 300}
     });
 
+
     return (
         <article>
             <div style={{marginBottom: 200}}>

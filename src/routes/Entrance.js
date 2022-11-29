@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useRef} from "react";
 import Slider from 'rc-slider';
 import styled from 'styled-components';
 import LetterChanger from './../LetterChanger';
@@ -58,6 +58,16 @@ const LineIngradient = styled.div`
     background: linear-gradient(bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);  
 `
 
+const Text = styled.div`
+    position: absolute;
+    bottom: 70px;
+    right: -90px;
+    font-size: 12px;
+    width: 220px;
+    word-break: keep-all;
+    line-height: 1.5;
+`
+
 function Entrance(){
 
     const [width, setWidth] = useState(0);
@@ -66,10 +76,14 @@ function Entrance(){
 
     const [voca, setVoca] = useState('');
 
+    const inputRef = useRef();
     const onChangeHandler = (e) => {
-        const test = /^[A-Z ]+$/;
+        const test = /^[a-zA-Z ]+$/;
         if (test.test(e.target.value) || e.target.value === "") {
-            setVoca(e.target.value);
+            setVoca(e.target.value.toString().toUpperCase());
+        } else {
+            // inputRef.current.className += ' error';
+            // setTimeout(()=> inputRef.current.className = inputRef.current.className.replace(' error', ''), 300);
         }
     }
 
@@ -91,8 +105,11 @@ function Entrance(){
                 }
                 </DisplayWrap>
                 <LineIngradient />
+                <Text>
+                    {'* 빠르게 타이핑할 시 글리프 형성의 시간차가\n발생할 수 있습니다.'}
+                </Text>
                 <Left>
-                    <Input maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
+                    <Input ref={inputRef} maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
                     <SliderBox>
                         <Slider
                             trackStyle={{height: 7.1, backgroundColor: 'rgba(46, 45, 45, 1)', border: 'solid 1px rgba(112, 112, 112, 1)', boxSizing: 'border-box'}} 

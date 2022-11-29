@@ -86,7 +86,7 @@ const View = styled.div`
     transition: all 0.3s;
     &:hover {
         z-index: 50;
-        transform: scale(1.4);
+        transform: scale(1.1);
     }  
 `
 
@@ -117,7 +117,7 @@ function Munja(){
                 <CenteredSection>
                 <div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={angleA} />
                             <Video src={angleB} />
                             <Video src={angleC} />
@@ -125,10 +125,10 @@ function Munja(){
                             <Video src={angleE} />
                             <Video src={angleF} />
                             <Video src={angleG} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={angleH} />
                             <Video src={angleI} />
                             <Video src={angleJ} />
@@ -136,10 +136,10 @@ function Munja(){
                             <Video src={angleL} />
                             <Video src={angleM} />
                             <Video src={angleN} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={angleO} />
                             <Video src={angleP} />
                             <Video src={angleQ} />
@@ -147,16 +147,16 @@ function Munja(){
                             <Video src={angleS} />
                             <Video src={angleT} />
                             <Video src={angleU} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={angleV} />
                             <Video src={angleW} />
                             <Video src={angleX} />
                             <Video src={angleY} />
                             <Video src={angleZ} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                     </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
@@ -174,7 +174,7 @@ function Munja(){
                 <CenteredSection>
                     <div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeA} />
                             <Video src={sizeB} />
                             <Video src={sizeC} />
@@ -182,10 +182,10 @@ function Munja(){
                             <Video src={sizeE} />
                             <Video src={sizeF} />
                             <Video src={sizeG} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeH} />
                             <Video src={sizeI} />
                             <Video src={sizeJ} />
@@ -193,10 +193,10 @@ function Munja(){
                             <Video src={sizeL} />
                             <Video src={sizeM} />
                             <Video src={sizeN} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeO} />
                             <Video src={sizeP} />
                             <Video src={sizeQ} />
@@ -204,16 +204,16 @@ function Munja(){
                             <Video src={sizeS} />
                             <Video src={sizeT} />
                             <Video src={sizeU} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            <div className='animated-dot'/>
+                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeV} />
                             <Video src={sizeW} />
                             <Video src={sizeX} />
                             <Video src={sizeY} />
                             <Video src={sizeZ} />
-                            <div className='animated-dot-bottom'/>                            
+                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                     </div>
                     <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
