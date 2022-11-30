@@ -126,20 +126,20 @@ function LetterChanger(props) {
         tmp.forEach(element => {
             if ((element >= 'a' && element <= 'z') || (element >= 'A' && element <= 'Z')) {
                 if (element === 'l' || element === 'L' || element === 'I' || element === 'i' || element === 'T' || element === 't') {
-                    if (sum + size + width - 20 > 1018){
+                    if (sum + size + width - 20 > 1236){
                         sum = (size + width - 20);
                     } else {
                         sum += (size + width - 20);
                     }
                 } else {
-                    if (sum + (size + width) > 1018){
+                    if (sum + (size + width) > 1236){
                         sum = (size + width);
                     } else {
                         sum += (size + width);
                     }
                 }
             } else if (element === ' '){
-                if (sum + (size/2 + width) > 1018) {
+                if (sum + (size/2 + width) > 1236) {
                     sum = (size/2 + width);
                 } else {
                     sum += (size/2 + width);
@@ -148,8 +148,8 @@ function LetterChanger(props) {
                 sum = 0;
             }
         })
-        const lineLength = sum % 1018;
-        return 1000 - lineLength - width;
+        const lineLength = sum % 1236;
+        return 1236 - lineLength - width;
     },[voca, vocas, size, width, index]);
 
     return (

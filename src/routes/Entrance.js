@@ -34,8 +34,10 @@ const DisplayWrap = styled.div`
     }
 `
 
-const Input = styled.input`
+const Input = styled.textarea`
     width: 656px;
+    height: 36px;
+    text-align: center;
     box-sizing: border-box;
     background-color: white;
     border-radius: 19px;
@@ -78,12 +80,18 @@ function Entrance(){
 
     const inputRef = useRef();
     const onChangeHandler = (e) => {
-        const test = /^[a-zA-Z ]+$/;
+        const test = /^[a-zA-Z\n ]+$/;
         if (test.test(e.target.value) || e.target.value === "") {
             setVoca(e.target.value.toString().toUpperCase());
         } else {
             // inputRef.current.className += ' error';
             // setTimeout(()=> inputRef.current.className = inputRef.current.className.replace(' error', ''), 300);
+        }
+    }
+
+    const checkEnter = (e) => {
+        if (e.keyCode === 13) {
+            inputRef.current.scrollTop = inputRef.current.scrollHeight;
         }
     }
 
@@ -109,7 +117,7 @@ function Entrance(){
                     {'* 빠르게 타이핑할 시 글리프 형성의 시간차가\n발생할 수 있습니다.'}
                 </Text>
                 <Left>
-                    <Input ref={inputRef} maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
+                    <Input onKeyUp={checkEnter} ref={inputRef} maxLength={30} placeholder="type here" value={voca} onChange={onChangeHandler} />
                     <SliderBox>
                         <Slider
                             trackStyle={{height: 7.1, backgroundColor: 'rgba(46, 45, 45, 1)', border: 'solid 1px rgba(112, 112, 112, 1)', boxSizing: 'border-box'}} 
