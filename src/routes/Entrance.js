@@ -43,6 +43,7 @@ const Input = styled.textarea`
     border-radius: 19px;
     padding: 10px 22px;
     margin-right: 55.9px;
+    line-height: 1.3;
 `
 
 const SliderBox = styled.div`
@@ -83,6 +84,9 @@ function Entrance(){
         const test = /^[a-zA-Z\n ]+$/;
         if (test.test(e.target.value) || e.target.value === "") {
             setVoca(e.target.value.toString().toUpperCase());
+            if (!e.target.value.includes("\n")){
+                inputRef.current.scrollTop = 0;
+            }
         } else {
             // inputRef.current.className += ' error';
             // setTimeout(()=> inputRef.current.className = inputRef.current.className.replace(' error', ''), 300);
