@@ -90,6 +90,10 @@ const View = styled.div`
     }  
 `
 
+const Pre = styled.p`
+    white-space: pre;
+`
+
 const Video = (props) => {
     return <View>
         <HoverVideoPlayer videoClassName="size-video" videoSrc={props?.src} restartOnPaused loop />
@@ -105,10 +109,10 @@ function Munja(){
                     <RowSectionSpaceBetween style={{alignItems: 'flex-end'}}>
                         <Image style={{width: 385, marginRight: 173}} src={processMain} />
                         <TextSection style={{width: 613}}>
-                            <h3>PROCESS</h3>
-                            <p>
-                                기하학적 형태의 모듈을 반복과 중첩을 바탕으로 구성된 동양의 전통문양에서 영감을 받아, 마름모꼴의 도형을 기본모듈로 지정하고 그리드 시스템에 따라 문자의 구조를 형성합니다.
-                            </p>
+                            <h3 style={{marginBottom: 24}}>PROCESS</h3>
+                            <Pre>
+                                {'기하학적 형태의 모듈을 반복과 중첩을 바탕으로 구성된 동양의\n전통문양에서 영감을 받아, 마름모꼴의 도형을 기본모듈로 지정\n하고 그리드 시스템에 따라 문자의 구조를 형성합니다.'}
+                            </Pre>
                         </TextSection>
                     </RowSectionSpaceBetween>
                 </CenteredSection>
@@ -164,9 +168,9 @@ function Munja(){
                             <Image id='angle-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>ANGLE</h3>
                         </div>
-                        <div style={{width: '60%'}}>
-                            기본 모듈의 각도를 45 ° 씩 변경하여 문자의 스타일을 변경할 수 있습니다.
-                        </div>
+                        <Pre style={{width: '60%'}}>
+                            {'글자를 이루는 기본 모듈이 45 ° 를 기준으로 회전하면서 문자의 뉘앙스가 변\n화합니다.'}
+                        </Pre>
                     </TextSection>
                 </CenteredSection>
             </section>
@@ -221,9 +225,9 @@ function Munja(){
                             <Image id='size-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>SIZE</h3>
                         </div>
-                        <div style={{width: '60%'}}>
-                            기본 모듈의 각도가 45 ° 씩 변경되며 문자가 가진 뉘앙스가 변화합니다.
-                        </div>
+                        <Pre style={{width: '60%'}}>
+                            {'문자를 이루는 기본모듈이 100~130% 내의 범위에서 확대 축소되며 뉘앙스가\n변화합니다.'}
+                        </Pre>
                     </TextSection>
                 </CenteredSection>
             </section>

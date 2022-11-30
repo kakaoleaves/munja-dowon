@@ -61,7 +61,7 @@ const LineIngradient = styled.div`
 const Text = styled.div`
     position: absolute;
     bottom: 70px;
-    right: -90px;
+    right: 0px;
     font-size: 12px;
     width: 220px;
     word-break: keep-all;
