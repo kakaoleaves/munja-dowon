@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import dowonProcess from '../assets/images/Dowon-process.png';
 import graphicStyle from '../assets/images/Graphic-style.png';
@@ -6,33 +6,40 @@ import sky from '../assets/images/Sky.png';
 import earth from '../assets/images/Earth.png';
 import between from '../assets/images/Between.png';
 import dot from '../assets/images/Dot.png';
+import Footer from '../component/Footer';
 
 const RowSectionSpaceBetween = styled.div`
-display: flex;
+    display: flex;
 `
 
 const Categorize = styled.div`
-    width: 950px;
-    margin-bottom: 145px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 96.9px;
 `
 
-const CategorizeText = styled.p`
-    width: 300px;
-    position: absolute;
-    left: 970px;
-    bottom: -60px;
+const CategorizeText = styled.div`
+    display: flex;
+    align-items: center;
+    width: 120px;
+    white-space: pre;
 `
+
+const LargeText = styled.div`
+    font-size: 24px;
+    margin-right: 10px;
+`;
 
 const CenteredSection = styled.div`
     margin: auto;
     width: 1222.5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 `
 
 const TextSection = styled.div`
+    width: 1220px;
     word-break: keep-all;
     font-size: 20px;
     line-height: 1.5;
@@ -47,8 +54,22 @@ const Pre = styled.p`
     white-space: pre;
 `
 
+const DotLine = styled.div`
+    width: 1094.3px;
+    height: 1px;
+    box-sizing: border-box;
+    border: dashed 1px rgba(84, 84, 84, 1);
+`
+
+const CenteredRow = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 36.5px;
+`
+
 function Dowon(){
     return (
+        <Fragment>
         <article>
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
@@ -80,29 +101,40 @@ function Dowon(){
             <section style={{marginBottom: 300}}>
                 <CenteredSection>
                     <Categorize>
-                        <Image src={sky} />
-                        <CategorizeText>{'天 (하늘)'}</CategorizeText>
+                        <CenteredRow>
+                            <CategorizeText><LargeText>天</LargeText>(하늘)</CategorizeText>
+                            <DotLine/>
+                        </CenteredRow>
+                        <Image style={{width: 950}} src={sky} />
                     </Categorize>
                     <Categorize>
-                        <Image src={earth} />
-                        <CategorizeText>{'地 (하늘과 땅 사이)'}</CategorizeText>
+                        <CenteredRow>
+                            <CategorizeText><LargeText>間</LargeText>(간)</CategorizeText>
+                            <DotLine/>
+                        </CenteredRow>
+                        <Image style={{width: 950}} src={earth} />
                     </Categorize>
                     <Categorize>
-                        <Image src={between} />
-                        <CategorizeText>{'間 (땅)'}</CategorizeText>
+                        <CenteredRow>
+                            <CategorizeText><LargeText>地</LargeText>(땅)</CategorizeText>
+                            <DotLine/>
+                        </CenteredRow>
+                        <Image style={{width: 950}} src={between} />
                     </Categorize>
-                    <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
+                    <TextSection style={{display: 'flex', alignItems: 'flex-start', marginTop: 80}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image style={{width: 22.9}} src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>CATEGORIZE</h3>
                         </div>
                         <Pre style={{width: '60%'}}>
-                            {'자연물의 이미지들은 동양사상에서 이세상을 의미하는 천지간(天地間)에 따라\n그 종류가 나뉘며 각각 하늘(해, 달, 구름), 땅(산봉우리) 그리고 그 사이의 생명\n들(폭포, 소나무)을 상징하는 형상으로 구성되어 있습니다.'}
+                            {'자연물의 이미지들은 동양사상에서 이 세상을 의미하는 천지간(天地間)에 따라\n그 종류가 나뉘며 각각 하늘(해, 달, 구름), 땅(산봉우리) 그리고 그 사이의 생명\n들(폭포, 소나무)을 상징하는 형상으로 구성되어 있습니다.'}
                         </Pre>
                     </TextSection>
                 </CenteredSection>
             </section>
         </article>
+        <Footer/>
+        </Fragment>
     )
 }
 

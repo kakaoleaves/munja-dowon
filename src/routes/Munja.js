@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useState, useEffect, Fragment} from 'react';
 import styled from 'styled-components';
 import processMain from '../assets/images/Process-main.png';
 import angle from '../assets/images/Angle.png';
@@ -57,6 +57,7 @@ import angleX from '../assets/images/angle/X.mp4';
 import angleY from '../assets/images/angle/Y.mp4';
 import angleZ from '../assets/images/angle/Z.mp4';
 import HoverVideoPlayer from 'react-hover-video-player';
+import Footer from './../component/Footer';
 
 const anime = require('animejs');
 
@@ -103,6 +104,7 @@ const Video = (props) => {
 function Munja(){
 
     return (
+    <Fragment>
         <article>
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
@@ -163,7 +165,7 @@ function Munja(){
                             {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                     </div>
-                    <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
+                    <TextSection style={{display: 'flex', alignItems: 'flex-start', marginTop: 130}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image id='angle-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>ANGLE</h3>
@@ -220,7 +222,7 @@ function Munja(){
                             {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                     </div>
-                    <TextSection style={{display: 'flex', alignItems: 'flex-start'}}>
+                    <TextSection style={{display: 'flex', alignItems: 'flex-start', marginTop: 130}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image id='size-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>SIZE</h3>
@@ -232,6 +234,8 @@ function Munja(){
                 </CenteredSection>
             </section>
         </article>
+        <Footer />
+    </Fragment>
     )
 }
 

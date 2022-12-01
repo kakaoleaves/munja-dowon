@@ -1,6 +1,5 @@
 import { Fragment, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import Footer from '../component/Footer';
 import Header from './../component/Header';
 
 function Layout(){
@@ -30,7 +29,6 @@ function Layout(){
             <main>
                 <Outlet />
             </main>
-            <Footer />
         </Fragment>
     )
 }

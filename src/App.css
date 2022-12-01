@@ -42,12 +42,8 @@ a {
   cursor: pointer;
 }
 
-main {
-  padding-top: 220px;
-}
-
 header a {
-  margin-right: 34px;
+  margin-right: 68px;
 }
 
 header a:last-child {
@@ -163,4 +159,25 @@ textarea {
   60% { -webkit-transform: translate(-15px); }
   80% { -webkit-transform: translate(8px); }
   100% { -webkit-transform: translate(0px); }
+}
+
+.wavy {
+  animation-name: wavy;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+@keyframes wavy {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 0px;
+  }
 }

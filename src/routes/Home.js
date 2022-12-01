@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import OverviewVideo from "../assets/images/overview.mp4";
 import TitleVideo from "../assets/images/Title.mp4";
@@ -8,6 +8,7 @@ import BackgroundImg3 from "../assets/images/Background-3.mp4";
 import { Link } from "react-router-dom";
 import HeaderButton from "../component/HeaderButton";
 import useScrollFadeIn from "../hooks/useScrollFadeIn";
+import Footer from './../component/Footer';
 
 const RowSectionSpaceBetween = styled.div`
     display: flex;
@@ -79,7 +80,8 @@ function Home(){
     });
 
     return (
-        <article>
+    <Fragment>
+      <article>
             <div style={{marginBottom: 200}}>
                 <Video style={{marginTop: -100}} src={TitleVideo} autoPlay loop />
             </div>
@@ -96,7 +98,7 @@ function Home(){
                                 {'그림과 문자의 경계를 허무는 새로운 표현도구를 제작하고\n이를 활용하여 다양한 이미지를 구성합니다.'}
                             </Pre>
                             <Pre>
-                                {"문자도원에서 제공하는 26가지의 '글리프'를 활용하여\n나의 이상향을 은밀하게 투영한 새로운 도원을 만들어보세요."}
+                                {"문자도원에서 제공하는 26가지의 '글리프'를 활용하여\n나의 이상향을 담은 새로운 도원을 만들어보세요."}
                             </Pre>
                             </TextWrap>
                         </TextSection>
@@ -165,6 +167,8 @@ function Home(){
                 </div>
             </section>
         </article>
+        <Footer />
+    </Fragment>
     )
 }
 
