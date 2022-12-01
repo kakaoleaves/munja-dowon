@@ -89,7 +89,7 @@ function Entrance(){
         if (test.test(e.target.value) || e.target.value === "") {
             setVoca(e.target.value.toString().toUpperCase());
             if (!e.target.value.includes("\n")){
-                inputRef.current.scrollTop = 8;
+                inputRef.current.scrollTop = 7;
             }
         } else {
             // inputRef.current.className += ' error';
@@ -99,13 +99,13 @@ function Entrance(){
 
     const checkEnter = (e) => {
         if (e.keyCode === 13) {
-            inputRef.current.scrollTop = inputRef.current.scrollHeight - 36;
+            inputRef.current.scrollTop = inputRef.current.scrollHeight - 40;
         }
     }
 
     useEffect(()=> {
         if (inputRef?.current){
-            inputRef.current.scrollTop = 8;
+            inputRef.current.scrollTop = 7;
         }
     }, [inputRef])
 
