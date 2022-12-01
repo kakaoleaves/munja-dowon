@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import headerLogo from "../assets/images/Header.png";
 
-    const HeaderLogo = styled.img`
+const HeaderLogo = styled.img`
     position: absolute;
     z-index: 100;
     top: 60px;

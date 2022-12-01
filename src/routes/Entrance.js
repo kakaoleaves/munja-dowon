@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import Slider from 'rc-slider';
 import styled from 'styled-components';
 import LetterChanger from './../LetterChanger';
@@ -37,13 +37,17 @@ const DisplayWrap = styled.div`
 const Input = styled.textarea`
     width: 656px;
     height: 36px;
-    text-align: center;
     box-sizing: border-box;
     background-color: white;
     border-radius: 19px;
     padding: 10px 22px;
     margin-right: 55.9px;
-    line-height: 1.3;
+    line-height: 2;
+    -ms-overflow-style: none;
+    -scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 const SliderBox = styled.div`
@@ -75,7 +79,7 @@ function Entrance(){
 
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    const [size, setSize] = useState(200);
+    const [size, setSize] = useState(120);
 
     const [voca, setVoca] = useState('');
 
@@ -85,7 +89,7 @@ function Entrance(){
         if (test.test(e.target.value) || e.target.value === "") {
             setVoca(e.target.value.toString().toUpperCase());
             if (!e.target.value.includes("\n")){
-                inputRef.current.scrollTop = 0;
+                inputRef.current.scrollTop = 8;
             }
         } else {
             // inputRef.current.className += ' error';
@@ -95,9 +99,15 @@ function Entrance(){
 
     const checkEnter = (e) => {
         if (e.keyCode === 13) {
-            inputRef.current.scrollTop = inputRef.current.scrollHeight;
+            inputRef.current.scrollTop = inputRef.current.scrollHeight - 36;
         }
     }
+
+    useEffect(()=> {
+        if (inputRef?.current){
+            inputRef.current.scrollTop = 8;
+        }
+    }, [inputRef])
 
     // useEffect(()=> {
     //     const length = document.getElementsByClassName('video').length;
@@ -169,7 +179,7 @@ function Entrance(){
                                 height: 14,
                                 marginTop: -3.5,
                             }}
-                            value={size} min={200} max={500} step={10} onChange={value => setSize(value)}
+                            value={size} min={120} max={500} step={10} onChange={value => setSize(value)}
                         />
                     </SliderBox>
                 </Left>

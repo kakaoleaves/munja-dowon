@@ -8,8 +8,9 @@ const FooterStyle = styled.div`
     padding-top: 50px;
     align-items: center;
     justify-content: space-between;
-    max-width: 1024px;
+    max-width: 1250px;
     margin: auto;
+    font-size: 24px;
 `
 
 const FooterVideo = styled.video`
@@ -23,7 +24,7 @@ function Footer(){
         <footer>
             <FooterStyle>
             <div>
-                <img src={footerImg}/>
+                <img style={{width: 358, objectFit: 'contain'}} src={footerImg}/>
                 <div>© 2022 Hyunjoon Han</div>
             </div>
             <div>

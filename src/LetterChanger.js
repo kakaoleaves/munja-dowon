@@ -149,7 +149,7 @@ function LetterChanger(props) {
             }
         })
         const lineLength = sum % 1236;
-        return 1236 - lineLength - width;
+        return (1236 - lineLength - width);
     },[voca, vocas, size, width, index]);
 
     return (
