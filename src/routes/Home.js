@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { useState, Fragment, useEffect } from "react"
 import styled from "styled-components"
 import OverviewVideo from "../assets/images/overview.mp4";
 import TitleVideo from "../assets/images/Title.mp4";
@@ -79,9 +79,29 @@ function Home(){
         defaultStyle: {width: 300, objectFit: 'cover'}
     });
 
+    const [scrollEnd, setScrollEnd] = useState(false);
+
+    const handleScroll = () => {
+        const html = document.querySelector('html');
+        setScrollEnd(Math.floor(html.scrollHeight - html.scrollTop) === html.clientHeight);
+    };
+    
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll, {passive: true});
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
+
     return (
     <Fragment>
-      <article>
+        <article>
+            {
+                !scrollEnd &&
+                <div className="scroll">
+                    <span />
+                </div>
+            }
             <div style={{marginBottom: 200}}>
                 <Video style={{marginTop: -100}} src={TitleVideo} autoPlay loop />
             </div>

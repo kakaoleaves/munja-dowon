@@ -4,32 +4,6 @@ import processMain from '../assets/images/Process-main.png';
 import angle from '../assets/images/Angle.png';
 import size from '../assets/images/Alphabet-Size.mp4';
 import dot from '../assets/images/Dot.png';
-import sizeA from '../assets/images/size/A.mp4';
-import sizeB from '../assets/images/size/B.mp4';
-import sizeC from '../assets/images/size/C.mp4';
-import sizeD from '../assets/images/size/D.mp4';
-import sizeE from '../assets/images/size/E.mp4';
-import sizeF from '../assets/images/size/F.mp4';
-import sizeG from '../assets/images/size/G.mp4';
-import sizeH from '../assets/images/size/H.mp4';
-import sizeI from '../assets/images/size/I.mp4';
-import sizeJ from '../assets/images/size/J.mp4';
-import sizeK from '../assets/images/size/K.mp4';
-import sizeL from '../assets/images/size/L.mp4';
-import sizeM from '../assets/images/size/M.mp4';
-import sizeN from '../assets/images/size/N.mp4';
-import sizeO from '../assets/images/size/O.mp4';
-import sizeP from '../assets/images/size/P.mp4';
-import sizeQ from '../assets/images/size/Q.mp4';
-import sizeR from '../assets/images/size/R.mp4';
-import sizeS from '../assets/images/size/S.mp4';
-import sizeT from '../assets/images/size/T.mp4';
-import sizeU from '../assets/images/size/U.mp4';
-import sizeV from '../assets/images/size/V.mp4';
-import sizeW from '../assets/images/size/W.mp4';
-import sizeX from '../assets/images/size/X.mp4';
-import sizeY from '../assets/images/size/Y.mp4';
-import sizeZ from '../assets/images/size/Z.mp4';
 import angleA from '../assets/images/angle/A.mp4';
 import angleB from '../assets/images/angle/B.mp4';
 import angleC from '../assets/images/angle/C.mp4';
@@ -58,8 +32,6 @@ import angleY from '../assets/images/angle/Y.mp4';
 import angleZ from '../assets/images/angle/Z.mp4';
 import HoverVideoPlayer from 'react-hover-video-player';
 import Footer from './../component/Footer';
-
-const anime = require('animejs');
 
 const RowSectionSpaceBetween = styled.div`
 display: flex;
@@ -103,9 +75,29 @@ const Video = (props) => {
 
 function Munja(){
 
+    const [scrollEnd, setScrollEnd] = useState(false);
+
+    const handleScroll = () => {
+        const html = document.querySelector('html');
+        setScrollEnd(Math.floor(html.scrollHeight - html.scrollTop) === html.clientHeight);
+    };
+    
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll, {passive: true});
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
+
     return (
     <Fragment>
         <article>
+            {
+                !scrollEnd &&
+                <div className="scroll">
+                    <span />
+                </div>
+            }
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween style={{alignItems: 'flex-end'}}>
@@ -171,16 +163,15 @@ function Munja(){
                             <h3 style={{margin: '0 0 0 15px'}}>ANGLE</h3>
                         </div>
                         <Pre style={{width: '60%'}}>
-                            {'글자를 이루는 기본 모듈이 45 ° 를 기준으로 회전하면서 문자의 뉘앙스가 변\n화합니다.'}
+                            {'글자를 이루는 기본 모듈이 45 ° 를 기준으로 회전하면서 문자의 뉘앙스가\n변화합니다.'}
                         </Pre>
                     </TextSection>
                 </CenteredSection>
             </section>
             <section style={{marginBottom: 300}}>
                 <CenteredSection>
-                    <div>
+                    {/* <div>
                         <div className='dot-animated-container'>
-                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeA} />
                             <Video src={sizeB} />
                             <Video src={sizeC} />
@@ -188,10 +179,8 @@ function Munja(){
                             <Video src={sizeE} />
                             <Video src={sizeF} />
                             <Video src={sizeG} />
-                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeH} />
                             <Video src={sizeI} />
                             <Video src={sizeJ} />
@@ -199,10 +188,8 @@ function Munja(){
                             <Video src={sizeL} />
                             <Video src={sizeM} />
                             <Video src={sizeN} />
-                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeO} />
                             <Video src={sizeP} />
                             <Video src={sizeQ} />
@@ -210,19 +197,17 @@ function Munja(){
                             <Video src={sizeS} />
                             <Video src={sizeT} />
                             <Video src={sizeU} />
-                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
                         <div className='dot-animated-container'>
-                            {/* <div className='animated-dot'/> */}
                             <Video src={sizeV} />
                             <Video src={sizeW} />
                             <Video src={sizeX} />
                             <Video src={sizeY} />
                             <Video src={sizeZ} />
-                            {/* <div className='animated-dot-bottom'/>                             */}
                         </div>
-                    </div>
-                    <TextSection style={{display: 'flex', alignItems: 'flex-start', marginTop: 130}}>
+                    </div> */}
+                    <video style={{height: 925, marginLeft: -190, objectFit: 'cover'}} src={size} autoPlay loop />
+                    <TextSection style={{display: 'flex', alignItems: 'flex-start', marginTop: 90}}>
                         <div style={{display: 'flex', alignItems: 'center', width: '40%'}}>
                             <Image id='size-img' src={dot} />
                             <h3 style={{margin: '0 0 0 15px'}}>SIZE</h3>

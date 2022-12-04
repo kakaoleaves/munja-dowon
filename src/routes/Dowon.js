@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import dowonProcess from '../assets/images/Dowon-process.png';
 import graphicStyle from '../assets/images/Graphic-style.png';
@@ -68,9 +68,30 @@ const CenteredRow = styled.div`
 `
 
 function Dowon(){
+
+    const [scrollEnd, setScrollEnd] = useState(false);
+
+    const handleScroll = () => {
+        const html = document.querySelector('html');
+        setScrollEnd(Math.floor(html.scrollHeight - html.scrollTop) === html.clientHeight);
+    };
+    
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll, {passive: true});
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
+
     return (
         <Fragment>
         <article>
+            {
+                !scrollEnd &&
+                <div className="scroll">
+                    <span />
+                </div>
+            }
             <section style={{marginBottom: 250}}>
                 <CenteredSection>
                     <RowSectionSpaceBetween style={{alignItems: 'flex-end'}}>
@@ -93,7 +114,7 @@ function Dowon(){
                             <h3 style={{margin: '0 0 0 15px'}}>GRAPHIC STYLE</h3>
                         </div>
                         <Pre style={{width: '60%'}}>
-                            {'도원을 구성하는 26가지의 자연물 글리프들은 모두 금수강산을 이루는 자연물\n의 형상을 바탕으로 제작되었고 26개의 각 알파벳에 대응합니다.'}
+                            {'도원을 구성하는 26가지의 자연물 글리프들은 모두 금수강산을 이루는\n자연물의 형상을 바탕으로 제작되었고 26개의 각 알파벳에 대응합니다.'}
                         </Pre>
                     </TextSection>
                 </CenteredSection>
@@ -127,7 +148,7 @@ function Dowon(){
                             <h3 style={{margin: '0 0 0 15px'}}>CATEGORIZE</h3>
                         </div>
                         <Pre style={{width: '60%'}}>
-                            {'자연물의 이미지들은 동양사상에서 이 세상을 의미하는 천지간(天地間)에 따라\n그 종류가 나뉘며 각각 하늘(해, 달, 구름), 땅(산봉우리) 그리고 그 사이의 생명\n들(폭포, 소나무)을 상징하는 형상으로 구성되어 있습니다.'}
+                            {'자연물의 이미지들은 동양사상에서 이 세상을 의미하는 천지간(天地間)에 따라\n그 종류가 나뉘며 각각 하늘(해, 달, 구름), 땅(산봉우리) 그리고 그 사이의 \n생명들(폭포, 소나무)을 상징하는 형상으로 구성되어 있습니다.'}
                         </Pre>
                     </TextSection>
                 </CenteredSection>

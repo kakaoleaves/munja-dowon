@@ -30,6 +30,20 @@ import gifLetterZ from './assets/images/Z-compressed.mp4';
 function LetterChanger(props) {
     const {voca, vocas, index, width, height, size} = props || {};
 
+    const makeWavyAnimation = () => {
+        Array.from(document.getElementsByClassName('video')).forEach((video, index) => {
+            setTimeout(() => {
+                video.classList.add("wavy");
+            }, index * 60 + 200);
+          });
+    }
+
+    const deleteWavyAnimation = () => {
+        Array.from(document.getElementsByClassName('video')).forEach((video) => {
+            video.classList.remove("wavy");
+          });
+    }
+
     const srcImg = (voca) => {
         switch (voca) {
             case 'a':
@@ -153,7 +167,7 @@ function LetterChanger(props) {
     },[voca, vocas, size, width, index]);
 
     return (
-        <div style={{marginRight: width, marginBottom: height}}>
+        <div style={{marginRight: width, marginBottom: height + 5}}>
             {
                 changed === '' ?
                 <div style={{width: size/2, height: size}} />
